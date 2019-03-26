@@ -1,0 +1,15 @@
+.todoDone {
+	text-decoration: line-through;
+	font-style: italic;
+	color: gray;
+}
+
+.red {
+	background-color: red;
+}
+.green {
+	background-color: green;
+}
+.blue {
+	background-color: blue;
+}
