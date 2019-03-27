@@ -21,6 +21,9 @@
                                 <span id="add">
                                     <button class="btn btn-outline-primary" type="button">Add</button>
                                 </span>
+                                <span id="search">
+                                        <button class="btn btn-outline-primary" type="button">Search</button>
+                                </span>
                         </div>
                         <div id='actionPanel2'>
                             <div class="btn-group btn-block">
@@ -29,19 +32,15 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="page" id='list'></ul>
+                    <ul class="list-group" id='list'></ul>
                 </div>
                 <span>
-                    <button id="Comleted" class="btn btn-outline-primary" type="button">Comleted</button>
-                    <button id="Active" class="btn btn-outline-primary" type="button">Active</button>
-                    <button id="All" class="btn btn-outline-primary" type="button">All</button>
+                    <button id="Completed" class="btn btn-outline-primary" type="button">Comleted<span><strong id="complete"></strong></span></button>
+                    <button id="Active" class="btn btn-outline-primary" type="button">Active<span><strong id="inProcess"></strong></span></button>
+                    <button id="All" class="btn btn-outline-primary" type="button">All<span><strong id="all"></strong></span></button>
                 </span>
-            </div>
-            <span>ToDo in process:<strong id="inProcess"></strong></span>   
-        <br>
-    <span>ToDo complete:<strong id="complete"></strong></span>
-    <br>
-    <span>ToDo All:<strong id="all"></strong></span>
+                <hr>
+            </div>  
 </div>
 <br>
 </div>
