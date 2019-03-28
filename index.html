@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>ToDo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
-<body>
-        <div class="container">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Todo application</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="input-group" id='actionPanel1'>
-                            <div class="input-group-prepend">
-                            </div>
-                            <input type="text" class="form-control" id='input'>
-                                <span id="add">
-                                    <button class="btn btn-outline-primary" type="button">Add</button>
-                                </span>
-                        </div>
-                        <div id='actionPanel2'>
-                            <div class="btn-group btn-block">
-                                <button type='button' class='btn btn-success' id="doneAction">Done All</button>
-                                <button type='button' class='btn btn-danger' id="removeAction">Delete Сompleted</button>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="page" id='list'></ul>
-                </div>
-                <span>
-                    <button id="Comleted" class="btn btn-outline-primary" type="button">Comleted</button>
-                    <button id="Active" class="btn btn-outline-primary" type="button">Active</button>
-                    <button id="All" class="btn btn-outline-primary" type="button">All</button>
-                </span>
-            </div>
-            <span>ToDo in process:<strong id="inProcess"></strong></span>   
-        <br>
-    <span>ToDo complete:<strong id="complete"></strong></span>
-    <br>
-    <span>ToDo All:<strong id="all"></strong></span>
-</div>
-<br>
-</div>
 
-<script src="script.js"></script>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Todo application</h4>
+            </div>
+            <div class="card-body">
+                <div class="input-group" id='actionPanel1'>
+                    <div class="input-group-prepend">
+                    </div>
+                    <input type="text" class="form-control" id='input'>
+                    <span id="add">
+                        <button class="btn btn-outline-primary" type="button">Add</button>
+                    </span>
+                    <span id="search">
+                        <button class="btn btn-outline-primary" type="button">Search</button>
+                    </span>
+                </div>
+                <div id='actionPanel2'>
+                    <div class="btn-group btn-block">
+                        <button type='button' class='btn btn-success' id="doneAction">Done All</button>
+                        <button type='button' class='btn btn-danger' id="removeAction">Delete Сompleted</button>
+                    </div>
+                    <button class='btnRed' id='buttonRed'></button>
+                    <button class='btnGreen' id='buttonGreen'></button>
+                    <button class='btnYellow' id='buttonYellow'></button>
+                </div>
+            </div>
+            <ul class="list-group" id='list'></ul>
+        </div>
+        <span>
+            <button id="Completed" class="btn btn-outline-primary" type="button">Comleted<span><strong
+                        id="complete"></strong></span></button>
+            <button id="Active" class="btn btn-outline-primary" type="button">Active<span><strong
+                        id="inProcess"></strong></span></button>
+            <button id="All" class="btn btn-outline-primary" type="button">All<span><strong
+                        id="all"></strong></span></button>
+        </span>
+        <hr>
+    </div>
+    </div>
+    <br>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
