@@ -13,3 +13,22 @@
 .yellow {
 	background-color: yellow;
 }
+
+.btnRed {
+	background: red;
+    height:30px;
+    width:30px;
+    border-radius: 100px;
+}
+.btnGreen {
+	background: green;
+    height:30px;
+    width:30px;
+    border-radius: 100px;
+}
+.btnYellow {
+	background: yellow;
+    height:30px;
+    width:30px;
+    border-radius: 100px;
+}

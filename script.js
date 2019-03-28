@@ -2,23 +2,32 @@ const ulElement = document.getElementById('list');
 
 let todoList = [];
 
+const names = ['red', 'yellow', 'green'];
+let i = 0;
 function add() {
+    
     if ($('#input').val() == '') {
         alert("Введите текст!");
     } else {
+        let colorRnd = names[Math.floor(Math.random()*names.length)];
         todoList.unshift({
             content: $('#input').val(),
             done: false,
-            selected: false
+            selected: false,
+            color: colorRnd,
+            id: i
         });
-        $('#input').val(''); 
+        i++;
+        $('#input').val('');
         upgradeView();
         return todoList;
     }
 }
+
 $('#add').click(function () {
     add();
 });
+
 $('#input').keydown(function (event) {
     if (event.which === 13) {
         add();
@@ -35,44 +44,46 @@ function upgradeView() {
 
         const todoItem = todoList[index];
 
-        const names = ['red','green','yellow'];
-        const color = names[Math.floor(Math.random()*names.length)];
-
+        let color = names[Math.floor(Math.random()*names.length)];
+    
         const liElement = $('<li>', {
             class: 'list-group-item',
             id: 'liElement'
         });
-        
-        liElement.addClass(color);
-
+        liElement.addClass(todoItem.color);
         liElement.appendTo(ulElement);
 
         const divElement = $('<div>', {
-            class: 'list-group form-check',
+            class: '',
             id: 'divElement'
         }).appendTo(liElement);
 
+        const inputElement = document.createElement('input');
+        inputElement.type = 'checkbox';
+        inputElement.checked = todoItem.selected;
+        divElement.append(inputElement);
+
         const lebelElement = $('<lebel>', {
-            class: 'form-check-lebel',
+            class: '',
             id: 'lebelElement',
             text: todoItem.content
         });
 
         if (todoItem.done) {
-            lebelElement.addClass(' todoDone')
+            lebelElement.addClass('todoDone');
         }
 
         lebelElement.appendTo(divElement);
 
         const buttonDoneElement = $('<button>', {
-            class: 'btn btn_outline-primary',
+            class: '',
             id: 'buttonDoneElement',
             type: 'button',
             html: 'Done'
         }).appendTo(divElement);
 
         const buttonRemoveElement = $('<button>', {
-            class: 'btn btn_outline-primary',
+            class: '',
             id: 'buttonRemoveElement',
             type: 'button',
             html: 'Delete'
@@ -92,8 +103,41 @@ function upgradeView() {
             $('#input').val(todoItem.content);
             todoList = todoList.filter(currentTodoItem => currentTodoItem !== todoItem)
         });
+
+        $(inputElement).change(function check() {
+            todoItem.selected = inputElement.checked;
+        });
+
+        $('#buttonRed').click(function () {
+            if (todoItem.selected) {
+                todoItem.color = ('red')
+                upgradeView()
+                // liElement.removeClass()
+                // liElement.addClass('list-group-item red');
+            }       
+        });
+
+        $('#buttonGreen').click(function () {
+            if (todoItem.selected) {
+                todoItem.color = ('green')
+                upgradeView()
+                // liElement.removeClass()
+                // liElement.addClass('list-group-item green');
+            }       
+        });
+
+        $('#buttonYellow').click(function () {
+            if (todoItem.selected) {
+                todoItem.color = ('yellow')
+                upgradeView()
+                // liElement.removeClass()
+                // liElement.addClass('list-group-item yellow');
+            }       
+        });
     }
 }
+
+$('li').addClass('red');
 
 function AllActiveCompleted() {
 
@@ -107,17 +151,17 @@ function AllActiveCompleted() {
 }
 
 $('#Completed').click(function Completed() {
-    const knopka1 = todoList.filter(item => item.done === true);
+    const completed = todoList.filter(item => item.done === true);
     let temp = todoList;
-    todoList = knopka1;
+    todoList = completed;
     upgradeView();
     todoList = temp;
 });
 
 $('#Active').click(function Active() {
-    const knopka2 = todoList.filter(item => item.done === false);
+    const active = todoList.filter(item => item.done === false);
     let temp = todoList;
-    todoList = knopka2;
+    todoList = active;
     upgradeView();
     todoList = temp;
 });
@@ -139,9 +183,9 @@ $('#doneAction').click(function doneAction() {
 });
 
 $('#search').click(function search() {
-    const sear = todoList.filter(todoItem => todoItem.content == $('#input').val());
+    const search = todoList.filter(todoItem => todoItem.content == $('#input').val());
     let temp = todoList;
-    todoList = sear;
+    todoList = search;
     upgradeView();
     todoList = temp;
 });
