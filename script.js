@@ -61,17 +61,17 @@ function upgradeView() {
         inputElement.checked = todoItem.selected;
         divElement.append(inputElement);
 
-        const lebelElement = $('<lebel>', {
+        const labelElement = $('<label>', {
             class: '',
-            id: 'lebelElement',
+            id: 'labelElement',
             text: todoItem.content
         });
 
         if (todoItem.done) {
-            lebelElement.addClass('todoDone');
+            labelElement.addClass('todoDone');
         }
 
-        lebelElement.appendTo(divElement);
+        labelElement.appendTo(divElement);
 
         const buttonDoneElement = $('<button>', {
             class: '',
@@ -97,7 +97,7 @@ function upgradeView() {
             upgradeView();
         });
 
-        lebelElement.dblclick(function edit() {
+        labelElement.dblclick(function edit() {
             $('#input').val(todoItem.content);
             todoList = todoList.filter(currentTodoItem => currentTodoItem !== todoItem)
         });

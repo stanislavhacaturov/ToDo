@@ -1,34 +1,38 @@
 .todoDone {
-	text-decoration: line-through;
-	font-style: italic;
-	color: gray;
+    text-decoration: line-through;
+    font-style: italic;
+    color: gray;
 }
 
 .red {
-	background-color: red;
+    background-color: red;
 }
+
 .green {
-	background-color: green;
+    background-color: green;
 }
+
 .yellow {
-	background-color: yellow;
+    background-color: yellow;
 }
 
 .btnRed {
-	background: red;
-    height:30px;
-    width:30px;
+    background: red;
+    height: 30px;
+    width: 30px;
     border-radius: 100px;
 }
+
 .btnGreen {
-	background: green;
-    height:30px;
-    width:30px;
+    background: green;
+    height: 30px;
+    width: 30px;
     border-radius: 100px;
 }
+
 .btnYellow {
-	background: yellow;
-    height:30px;
-    width:30px;
+    background: yellow;
+    height: 30px;
+    width: 30px;
     border-radius: 100px;
 }
